@@ -5,7 +5,7 @@ def new_in_list(my_list, idx, element):
         new.append(my_list[i])
     if idx < 0:
         return new
-    elif idx > len(my_list) -1:
+    elif idx > len(my_list) - 1:
         return new
     else:
         new[idx] = element
