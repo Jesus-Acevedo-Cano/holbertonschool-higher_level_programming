@@ -5,7 +5,7 @@ def safe_print_list(my_list=[], x=0):
         for i in range(x):
             print("{}".format(my_list[i]), end="")
             cnt += 1
-            print("")
+        print("")
         return cnt
     except IndexError:
         print("")
