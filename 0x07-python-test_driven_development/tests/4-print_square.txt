@@ -1,0 +1,79 @@
+The ``print_square`` module
+===========================
+
+Using ``print_square``
+----------------------
+
+import the print_square module
+>>> print_square = __import__('4-print_square').print_square
+
+passing a invalid argument type
+>>> print_square("7")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+passing a valid size type(float)
+>>> print_square(3.5)
+###
+###
+###
+
+passing a casted size
+>>> print_square(int("3"))
+###
+###
+###
+
+passing a None argument
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+passing a valid size
+>>> print_square(int(10))
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+passing zero as arg
+>>> print_square(0)
+
+
+passing float zero as arg
+>>> print_square(0.0)
+
+
+passing a negative arg
+>>> print_square(-7)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+passing a negative casted arg
+>>> print_square(int("-7"))
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+passing a float arg
+>>> print_square(5.0)
+#####
+#####
+#####
+#####
+#####
+
+passing a boolean as arg
+>>> print_square(False)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+passing a negative float
+>>> print_square(-3.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
