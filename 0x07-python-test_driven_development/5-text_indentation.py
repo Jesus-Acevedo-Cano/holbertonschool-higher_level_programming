@@ -3,9 +3,9 @@
 
 
 def text_indentation(text):
-    """  
-       identate text  lines after each character . ? :
-       text: input text to identate
+    """
+    identate text  lines after each character . ? :
+    text: input text to identate
     """
 
     if type(text) != str:
