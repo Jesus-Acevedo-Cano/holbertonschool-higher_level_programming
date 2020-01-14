@@ -1,0 +1,40 @@
+The ``text_indentation`` module
+===============================
+
+Testing ``text_indentation``
+----------------------------
+
+import the text_indentation module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+passing boolean
+>>> text_indentation(True)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+passing invalid argument
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+passing integer as argument
+>>> text_indentation(7)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+passing integer as string arg
+>>> text_indentation("35")
+35
+
+no arguments
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+passing valid argument with no special chars
+>>> text_indentation("""carpe diem cuam minimun credula postero""")
+carpe diem cuam minimun credula postero
+
+passing valid argument with no special chars and extra spaces
+>>> text_indentation("""        carpe diem cuam minimun credula postero          """)
+carpe diem cuam minimun credula postero
