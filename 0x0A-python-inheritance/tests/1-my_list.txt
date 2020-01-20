@@ -1,0 +1,14 @@
+The ``print_sorted`` module
+==========================
+
+Using ``print_sorted``
+---------------------
+
+import the print_sorted module.
+>>> MyList = __import__('1-my_list').MyList
+
+>>> MyList.print_sorted([10, -50])
+[-50, 10]
+
+>>> MyList.print_sorted([10, -50, 10, 0, 1])
+[-50, 0, 1, 10, 10]
