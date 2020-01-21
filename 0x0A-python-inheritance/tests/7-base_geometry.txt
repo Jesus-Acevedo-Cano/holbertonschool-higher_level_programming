@@ -71,3 +71,11 @@ Traceback (most recent call last):
 TypeError: size must be an integer
 
 >>> bageo.integer_validator("size", int(3.5))
+
+>>> bageo = BaseGeometry(None)
+Traceback (most recent call last):
+TypeError: object() takes no parameters
+
+>>> bageo.integer_validator("size", 0)
+Traceback (most recent call last):
+ValueError: size must be greater than 0
