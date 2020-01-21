@@ -6,3 +6,26 @@ Using ``BaseGeometry``
 
 import the BaseGeometry class.
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bageo = BaseGeometry()
+>>> bageo.integer_validator("int", 7)
+
+>>> bageo.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bageo.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bageo.integer_validator("width", -50)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
+
+>>> bageo.integer_validator("width", "Yisus")
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+>>> bageo.area("Yisus")
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
