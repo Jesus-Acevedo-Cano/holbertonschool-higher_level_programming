@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ base class"""
 import json
+import csv
 
 
 class Base:
@@ -57,6 +58,37 @@ class Base:
         try:
             with open(fileno, "r") as file:
                 lists = Base.from_json_string(file.read())
+                return [cls.create(**nlist) for nlist in lists]
+        except Exception:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes and deserializes in CSV """
+        csvNew = cls.__name__ + ".csv"
+        with open(csvNew, "w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Square":
+                    attribs = ["id", "size", "x", "y"]
+                else:
+                    attribs = ["id", "width", "height", "x", "y"]
+                doc = csv.DictWriter(csvfile, fieldnames=attribs)
+                [doc.writerow(i.to_dictionary()) for i in list_objs]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ serializes and deserializes in CSV """
+        csvNew = cls.__name__ + ".csv"
+        try:
+            with open(csvNew, "r", newline="") as csvfile:
+                if cls.__name__ == "Square":
+                    attribs = ["id", "size", "x", "y"]
+                else:
+                    attribs = ["id", "width", "height", "x", "y"]
+                doc = csv.DictReader(csvfile, fieldnames=attribs)
+                lists = [{k: int(v) for k, v in dic.items()} for dic in doc]
                 return [cls.create(**nlist) for nlist in lists]
         except Exception:
             return []
