@@ -60,7 +60,6 @@ class Test_Base_Class(unittest.TestCase):
         obj14 = Rectangle(1, 1, 1, 1)
         self.assertEqual(obj14.id, 12)
 
-
     def test_create_cls(self):
         """ test create any class """
         r1 = Rectangle(5, 7, 3, 3, 9)
@@ -79,7 +78,6 @@ class Test_Base_Class(unittest.TestCase):
         s3_dic = s3.to_dictionary()
         s4 = Square.create(**s3_dic)
         self.assertIsNot(s4, s3)
-
 
     def test_json_stirng(self):
         """ test JSON to string """
