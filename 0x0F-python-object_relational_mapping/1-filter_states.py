@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" lists all states from the database """
+""" lists all states whit a name starting with N from the database """
 
 import sys
 import MySQLdb
