@@ -22,7 +22,7 @@ if __name__ == '__main__':
     session = Session()
     result = session.query(State).first()
     if result:
-        print("{} : {}".format(result.id, result.name))
+        print("{}: {}".format(result.id, result.name))
     else:
         print("Nothing")
     session.close()
