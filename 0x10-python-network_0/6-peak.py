@@ -8,9 +8,4 @@ def find_peak(list_of_integers):
     elif len(list_of_integers) == 1:
         return list_of_integers[0]
     else:
-        #return max(list_of_integers)
-        temp = list_of_integers[0]
-        for i in range(len(list_of_integers)):
-            if temp < list_of_integers[i]:
-                temp = list_of_integers[i]
-        return temp
+        return max(list_of_integers)
